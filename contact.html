@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Ai Estate & Builders — Contact</title>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" type="ico" href="favicon.ico">
+	</head>
+	<body>
+
+		<!-- ===== NAVIGATION ===== -->
+		<nav>
+			<div class="logo" onclick="location.href='index.html'">
+				Ai Estate & Builders
+				<div class="logo-line"></div>
+				<span>Central Park · Lahore</span>
+			</div>
+			<div class="nav-links" id="nl">
+				<a href="index.html" class="nl">Home</a>
+				<a href="properties.html" class="nl">Properties</a>
+				<a href="about.html" class="nl">About</a>
+				<a href="contact.html" class="nl active">Contact</a>
+			</div>
+			<button class="nav-cta" onclick="location.href='contact.html'">Book a Tour</button>
+			<button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+		</nav>
+
+		<div class="toast" id="toast"><div class="tt" id="tt"></div><div class="tm2" id="tm2"></div></div>
+
+		<!-- ===== PAGE HEADER ===== -->
+		<div class="ph">
+			<div class="ph-bg" style="background-image:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80')"></div>
+			<div class="ph-ov"></div>
+			<div class="ph-content"><div class="sec-label" style="margin-bottom:.5rem">Get in Touch</div><h1 class="disp">Contact Us</h1><p>Book a tour, ask a question, or simply say hello</p></div>
+		</div>
+
+		<!-- ===== CONTACT FORM & INFO ===== -->
+		<div class="sec">
+			<div class="cgrid">
+				<div>
+					<div class="ccard"><div class="cicon">📞</div><div><h4>Phone / WhatsApp</h4><p>0300-4360489</p></div></div>
+					<div class="ccard"><div class="cicon">📍</div><div><h4>Location</h4><p><a href="https://maps.app.goo.gl/E2kNJ5oHSF2DJZQX7" target="_blank" style="color:var(--copper);text-decoration:none">Central Park Housing Scheme, Lahore, Pakistan</a></p></div></div>
+					<div class="ccard"><div class="cicon">▶️</div><div><h4>YouTube</h4><p><a href="https://youtube.com/@aiestatebuilders?si=vM-UYH7dPzv83UO9" target="_blank" style="color:var(--copper);text-decoration:none">Watch Our Project Videos</a></p></div></div>
+					<div class="ccard"><div class="cicon">🕐</div><div><h4>Hours</h4><p>Monday – Saturday · 10:00 AM to 7:00 PM</p></div></div>
+				</div>
+				<div>
+					<div class="bcard">
+						<div class="bcard-head"><h3>Book a Free Tour</h3><p>We'll confirm within 24 hours</p></div>
+						<div class="fg"><label>Your Name</label><input id="cn" type="text" placeholder="e.g. Ahmed Khan"></div>
+						<div class="fg"><label>Email Address</label><input id="ce" type="email" placeholder="your@email.com"></div>
+						<div class="fg"><label>Phone / WhatsApp</label><input id="cp" type="tel" placeholder="03XX-XXXXXXX"></div>
+						<div class="fg"><label>Property Interest</label><select id="cpr"><option value="">— Select a property —</option></select></div>
+						<div class="fg"><label>Preferred Date</label><input id="cd" type="date"></div>
+						<div class="fg"><label>Message (optional)</label><textarea id="cm" placeholder="Any questions or special requests..."></textarea></div>
+						<button class="btn btn-g" style="width:100%" onclick="submitContact()">Send Inquiry →</button>
+						<div class="confirm" id="cconf"><strong>✓ Inquiry Received!</strong><br>We'll WhatsApp you within 24 hours to confirm your tour.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ===== FOOTER ===== -->
+		<footer>
+			<div class="fin">
+				<div><div class="fbrand">AI <span>Estate & Builders</span></div><p>Building premium homes in Central Park, Lahore. Quality construction, honest dealings, lasting value.</p><p style="margin-top:.75rem">📞 <a href="tel:03214703013" style="color:var(--copper);text-decoration:none">0321-4703013</a></p></div>
+				<div class="flinks"><h4>Navigation</h4><a href="index.html">Home</a><a href="properties.html">Properties</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+				<div class="flinks"><h4>Listings</h4><a href="properties.html?filter=5%20Marla">5 Marla Homes</a><a href="properties.html?filter=10%20Marla">10 Marla Homes</a><a href="contact.html">Book a Tour</a><a href="admin.html" style="opacity:.3;font-size:.7rem">Admin</a></div>
+			</div>
+			<div class="fbot"><p>© 2025 AI Estate & Builders. All rights reserved.</p><p>Central Park Housing Scheme, Lahore, Pakistan</p></div>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>

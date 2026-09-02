@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AI Estate & Builders — About</title>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" type="ico" href="favicon.ico">
+	</head>
+	<body>
+
+		<!-- ===== NAVIGATION ===== -->
+		<nav>
+			<div class="logo" onclick="location.href='index.html'">
+				AI Estate & Builders
+				<div class="logo-line"></div>
+				<span>Central Park · Lahore</span>
+			</div>
+			<div class="nav-links" id="nl">
+				<a href="index.html" class="nl">Home</a>
+				<a href="properties.html" class="nl">Properties</a>
+				<a href="about.html" class="nl active">About</a>
+				<a href="contact.html" class="nl">Contact</a>
+			</div>
+			<button class="nav-cta" onclick="location.href='contact.html'">Book a Tour</button>
+			<button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+		</nav>
+
+		<div class="toast" id="toast"><div class="tt" id="tt"></div><div class="tm2" id="tm2"></div></div>
+
+		<!-- ===== PAGE HEADER ===== -->
+		<div class="ph">
+			<div class="ph-bg" style="background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80')"></div>
+			<div class="ph-ov"></div>
+			<div class="ph-content"><div class="sec-label" style="margin-bottom:.5rem">Our Story</div><h1 class="disp">About AI Estate & Builders</h1><p>Building trust, one home at a time</p></div>
+		</div>
+
+		<!-- ===== ABOUT CONTENT ===== -->
+		<div class="sec">
+			<div class="agrid">
+				<div>
+					<div class="sec-label">Who We Are</div>
+					<h2>Central Park's Most Trusted Builder</h2>
+					<span class="copper-line"></span>
+					<p style="color:var(--ts);line-height:1.85;margin-bottom:1rem">AI Estate & Builders was founded by Muhammad Ali with a single mission: give every Pakistani family a high-quality home they are proud of — at a price they can afford.</p>
+					<p style="color:var(--ts);line-height:1.85;margin-bottom:1rem">Based in Central Park Housing Scheme, Lahore, we specialise in designing, building, and selling 5 and 10 Marla homes. Every detail is supervised personally to ensure unmatched quality.</p>
+					<p style="color:var(--ts);line-height:1.85">We believe real estate is more than property — it's a family's future. That's why we treat every client like family.</p>
+				</div>
+				<div>
+					<div class="team-card">
+						<div class="avatar">MA</div>
+						<h3 style="font-size:1.4rem;margin-bottom:.2rem">Muhammad Ali</h3>
+						<p style="color:var(--copper);font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:.75rem">Founder &amp; Lead Builder</p>
+						<p style="color:var(--ts);font-size:.83rem;line-height:1.78">Years of hands-on experience in construction and real estate. Every project supervised personally — from design to final delivery.</p>
+						<div style="margin-top:1rem;padding-top:1rem;border-top:.5px solid var(--copper-b)"><a href="https://youtube.com/@propertywithali26721" target="_blank" style="color:var(--copper);font-size:.78rem;text-decoration:none">▶ Watch Our Projects on YouTube →</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ===== VALUES ===== -->
+		<div class="sec-wrap"><div class="sec-inner">
+			<div class="sec-label">Our Values</div><h2>What We Stand For</h2>
+			<div class="wgrid" style="margin-top:2rem">
+				<div class="wcard"><div class="wicon">✅</div><h3>Transparency</h3><p>Clear pricing. No hidden charges. What you see is exactly what you get, every time.</p></div>
+				<div class="wcard"><div class="wicon">🏠</div><h3>Quality First</h3><p>We never cut corners. Every material and finish chosen for durability and beauty.</p></div>
+				<div class="wcard"><div class="wicon">💼</div><h3>Professionalism</h3><p>On-time delivery, proper documentation, full legal compliance on every property we sell.</p></div>
+			</div>
+		</div></div>
+
+		<!-- ===== CTA ===== -->
+		<div class="cta"><div class="cta-bg"></div><div class="cta-ov"></div><div class="cta-in"><div><h2 class="disp">Let's Build Something Together</h2><p>Reach out and let us help you find your dream home.</p></div><button class="btn btn-g" onclick="location.href='contact.html'">Get in Touch →</button></div></div>
+
+		<!-- ===== FOOTER ===== -->
+		<footer>
+			<div class="fin">
+				<div><div class="fbrand">AI <span>Estate & Builders</span></div><p>Building premium homes in Central Park, Lahore. Quality construction, honest dealings, lasting value.</p><p style="margin-top:.75rem">📞 <a href="tel:03214703013" style="color:var(--copper);text-decoration:none">0321-4703013</a></p></div>
+				<div class="flinks"><h4>Navigation</h4><a href="index.html">Home</a><a href="properties.html">Properties</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+				<div class="flinks"><h4>Listings</h4><a href="properties.html?filter=5%20Marla">5 Marla Homes</a><a href="properties.html?filter=10%20Marla">10 Marla Homes</a><a href="contact.html">Book a Tour</a><a href="admin.html" style="opacity:.3;font-size:.7rem">Admin</a></div>
+			</div>
+			<div class="fbot"><p>© 2025 AI Estate & Builders. All rights reserved.</p><p>Central Park Housing Scheme, Lahore, Pakistan</p></div>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>

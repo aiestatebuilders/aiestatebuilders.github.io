@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AI Estate & Builders — Admin</title>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" type="ico" href="favicon.ico">
+		<!-- ===== ADMIN PAGE FIXES ===== -->
+		<style>
+			html, body {
+				height: 100%;
+				overflow-y: auto !important;
+			}
+			.acon {
+				min-height: calc(100vh - 60px);
+				padding: 2rem 1.5rem 10rem;
+				max-width: 900px;
+				margin: 0 auto;
+				display: block !important;
+			}
+			#aLogin {
+				max-width: 380px;
+				margin: 2rem auto;
+			}
+			#aDash {
+				display: none;
+				width: 100%;
+			}
+			#aDash.show {
+				display: block;
+			}
+			#aDash > div:first-child {
+				display: flex !important;
+				align-items: center !important;
+				justify-content: space-between !important;
+				flex-wrap: wrap !important;
+				gap: 1rem !important;
+				padding: 0.5rem 0 1rem 0 !important;
+				border-bottom: 1px solid var(--gold-b);
+				margin-bottom: 1.5rem !important;
+				background: var(--bg) !important;
+				position: sticky !important;
+				top: 60px !important;
+				z-index: 10 !important;
+			}
+			.bcard {
+				position: static !important;
+			}
+			footer {
+				position: relative !important;
+				z-index: 1 !important;
+				clear: both;
+			}
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			::-webkit-scrollbar-track {
+				background: var(--bg);
+			}
+			::-webkit-scrollbar-thumb {
+				background: var(--gold);
+				border-radius: 4px;
+			}
+			.pgrid {
+				max-width: 100%;
+			}
+			.pcard {
+				max-width: 100%;
+				width: 100%;
+			}
+			.pcard-img-wrap {
+				height: 200px;
+			}
+			.pcard-body {
+				padding: 0.8rem 1rem 1rem;
+			}
+			.pcard-title {
+				font-size: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+
+		<!-- ===== NAVIGATION ===== -->
+		<nav>
+			<div class="logo" onclick="location.href='index.html'">
+				AI Estate & Builders
+				<div class="logo-line"></div>
+				<span>Central Park · Lahore</span>
+			</div>
+			<div class="nav-links" id="nl">
+				<a href="index.html" class="nl">Home</a>
+				<a href="properties.html" class="nl">Properties</a>
+				<a href="about.html" class="nl">About</a>
+				<a href="contact.html" class="nl">Contact</a>
+			</div>
+			<button class="nav-cta" onclick="location.href='contact.html'">Book a Tour</button>
+			<button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+		</nav>
+
+		<div class="toast" id="toast"><div class="tt" id="tt"></div><div class="tm2" id="tm2"></div></div>
+
+		<!-- ===== ADMIN PANEL ===== -->
+		<div class="acon">
+			<!-- LOGIN -->
+			<div id="aLogin">
+				<h2 class="disp" style="margin-bottom:.5rem">Admin Panel</h2>
+				<p style="color:var(--tm);font-size:.84rem;margin-bottom:1.75rem">Enter the admin password to manage properties.</p>
+				<div class="acard">
+					<div class="fg">
+						<label>Password</label>
+						<input type="password" id="ap" placeholder="Password" onkeydown="if(event.key==='Enter')aLogin()">
+					</div>
+					<button class="btn btn-g" style="width:100%" onclick="aLogin()">Login →</button>
+					<p id="aerr" style="color:#E74C3C;font-size:.77rem;margin-top:.7rem;display:none">Incorrect password.</p>
+				</div>
+			</div>
+
+			<!-- DASHBOARD -->
+			<div id="aDash">
+				<div>
+					<h2 class="disp">Property Manager</h2>
+					<button class="btn btn-o" onclick="aLogout()" style="font-size:.72rem">Logout</button>
+				</div>
+
+				<!-- Add Property -->
+				<div class="acard">
+					<h3 style="margin-bottom:1.4rem">Add New Property</h3>
+					<div class="apform">
+						<div class="fg"><label>Title</label><input id="nt" placeholder="Modern 5 Marla Home"></div>
+						<div class="fg"><label>Price (PKR)</label><input id="np" placeholder="1.2 Crore"></div>
+						<div class="fg"><label>Size</label><input id="ns" placeholder="5 Marla"><!--<select id="ns"><option value="5 Marla">5 Marla</option><option value="10 Marla">10 Marla</option><option value="Other">Other</option></select>--></div>
+						<div class="fg"><label>Status</label><select id="nst"><option value="For Sale">For Sale</option><option value="Sold">Sold</option></select></div>
+						<div class="fg"><label>Beds</label><input id="nb" type="number" placeholder="3" min="1"></div>
+						<div class="fg"><label>Baths</label><input id="nbth" type="number" placeholder="3" min="1"></div>
+						<div class="fg full"><label>Image URL (optional)</label><input id="ni" placeholder="https://..."></div>
+						<div class="fg full"><label>Description</label><textarea id="nd" placeholder="Describe the property..."></textarea></div>
+						<div class="fg full"><label>Features (comma separated)</label><input id="nf" placeholder="Marble Flooring, Modern Kitchen, Backup Generator"></div>
+						<div class="full"><button class="btn btn-g" onclick="addProp()">Add Property →</button></div>
+					</div>
+				</div>
+
+				<!-- Manage Properties -->
+				<div class="acard">
+					<h3 style="margin-bottom:1.4rem">Manage Properties</h3>
+					<div id="aPropList"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ===== FOOTER ===== -->
+		<footer>
+			<div class="fin">
+				<div><div class="fbrand">AI <span>Estate & Builders</span></div><p>Building premium homes in Central Park, Lahore. Quality construction, honest dealings, lasting value.</p><p style="margin-top:.75rem">📞 <a href="tel:03214703013" style="color:var(--gold);text-decoration:none">0321-4703013</a></p></div>
+				<div class="flinks"><h4>Navigation</h4><a href="index.html">Home</a><a href="properties.html">Properties</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+				<div class="flinks"><h4>Listings</h4><a href="properties.html?filter=5%20Marla">5 Marla Homes</a><a href="properties.html?filter=10%20Marla">10 Marla Homes</a><a href="contact.html">Book a Tour</a><a href="admin.html" style="opacity:.3;font-size:.7rem">Admin</a></div>
+			</div>
+			<div class="fbot"><p>© 2025 AI Estate & Builders. All rights reserved.</p><p>Central Park Housing Scheme, Lahore, Pakistan</p></div>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>

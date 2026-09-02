@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AI Estate & Builders — Home</title>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" type="ico" href="favicon.ico">
+	</head>
+	<body>
+
+		<!-- ===== NAVIGATION (shared) ===== -->
+		<nav>
+			<div class="logo" onclick="location.href='index.html'">
+				AI Estate & Builders
+				<div class="logo-line"></div>
+				<span>Central Park · Lahore</span>
+			</div>
+			<div class="nav-links" id="nl">
+				<a href="index.html" class="nl active">Home</a>
+				<a href="properties.html" class="nl">Properties</a>
+				<a href="about.html" class="nl">About</a>
+				<a href="contact.html" class="nl">Contact</a>
+			</div>
+			<button class="nav-cta" onclick="location.href='contact.html'">Book a Tour</button>
+			<button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+		</nav>
+
+		<div class="toast" id="toast"><div class="tt" id="tt"></div><div class="tm2" id="tm2"></div></div>
+
+		<!-- ===== HERO ===== -->
+		<section class="hero">
+			<div class="hero-bg"></div>
+			<div class="hero-overlay"></div>
+			<div class="hero-content">
+				<div class="hero-tag">📍 Central Park Housing Scheme · Lahore, Pakistan</div>
+				<h1>Find Your Dream<br>Home in <span class="copper">Lahore</span></h1>
+				<p class="hero-sub">Premium 5 &amp; 10 Marla homes built with quality craftsmanship and sold with complete transparency.</p>
+				<div class="search-box">
+					<div class="sb-group">
+						<label>Property Size</label>
+						<select id="s-size"><option value="All">All Sizes</option><option value="5 Marla">5 Marla</option><option value="10 Marla">10 Marla</option></select>
+					</div>
+					<div class="sb-group">
+						<label>Status</label>
+						<select id="s-status"><option value="For Sale">For Sale</option><option value="All">All Listings</option></select>
+					</div>
+					<button class="sb-btn" onclick="heroSearch()">Search Properties →</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- ===== STATS ===== -->
+		<div class="stats-strip">
+			<div class="stats-inner">
+				<div class="stat-item"><div class="stat-n">50+</div><div class="stat-l">Homes Built</div></div>
+				<div class="stat-item"><div class="stat-n">100%</div><div class="stat-l">Satisfied Clients</div></div>
+				<div class="stat-item"><div class="stat-n">5★</div><div class="stat-l">Client Rating</div></div>
+				<div class="stat-item"><div class="stat-n">3+</div><div class="stat-l">Years Active</div></div>
+			</div>
+		</div>
+
+		<!-- ===== FEATURED ===== -->
+		<div class="sec">
+			<div class="sec-label">Latest Listings</div>
+			<h2 style="margin-bottom:.4rem">Featured Properties</h2>
+			<p style="color:var(--ts);font-size:.9rem;margin-bottom:.25rem">Handpicked homes in Central Park, Lahore</p>
+			<div class="pgrid" id="featGrid"></div>
+			<div style="margin-top:2rem;text-align:center">
+				<button class="btn btn-o" onclick="location.href='properties.html'">Browse All Properties →</button>
+			</div>
+		</div>
+
+		<!-- ===== WHY US ===== -->
+		<div class="sec-wrap"><div class="sec-inner">
+			<div class="sec-label">Why Choose Us</div>
+			<h2>The AI Estate Difference</h2>
+			<div class="wgrid">
+				<div class="wcard"><div class="wicon">🏗️</div><h3>Quality Construction</h3><p>Premium materials and skilled craftsmen — every home built to last a lifetime.</p></div>
+				<div class="wcard"><div class="wicon">🤝</div><h3>Honest Dealings</h3><p>No hidden costs, no surprises. Complete transparency from first visit to final handover.</p></div>
+				<div class="wcard"><div class="wicon">📍</div><h3>Prime Location</h3><p>Central Park is among Lahore's fastest-growing housing schemes — smart value for your family.</p></div>
+				<div class="wcard"><div class="wicon">🎯</div><h3>Turnkey Ready</h3><p>Fully finished homes — move in from day one. No extra work needed, just settle in.</p></div>
+			</div>
+		</div></div>
+
+		<!-- ===== CTA ===== -->
+		<div class="cta">
+			<div class="cta-bg"></div><div class="cta-ov"></div>
+			<div class="cta-in">
+				<div><h2 class="disp">Ready to Find Your Home?</h2><p>Book a free in-person tour — no obligation, any time.</p></div>
+				<button class="btn btn-g" onclick="location.href='contact.html'">Book a Free Tour →</button>
+			</div>
+		</div>
+
+		<!-- ===== FOOTER (shared) ===== -->
+		<footer>
+			<div class="fin">
+				<div><div class="fbrand">AI <span>Estate & Builders</span></div><p>Building premium homes in Central Park, Lahore. Quality construction, honest dealings, lasting value.</p><p style="margin-top:.75rem">📞 <a href="tel:0300436089" style="color:var(--copper);text-decoration:none">0300-436089</a></p></div>
+				<div class="flinks"><h4>Navigation</h4><a href="index.html">Home</a><a href="properties.html">Properties</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+				<div class="flinks"><h4>Listings</h4><a href="properties.html?filter=5%20Marla">5 Marla Homes</a><a href="properties.html?filter=10%20Marla">10 Marla Homes</a><a href="contact.html">Book a Tour</a><a href="admin.html" style="opacity:.3;font-size:.7rem">Admin</a></div>
+			</div>
+			<div class="fbot"><p>© 2025 AI Estate & Builders. All rights reserved.</p><p>Central Park Housing Scheme, Lahore, Pakistan</p></div>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>

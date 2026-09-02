@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AI Estate & Builders — Property Detail</title>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" type="ico" href="favicon.ico">
+	</head>
+	<body>
+
+		<!-- ===== NAVIGATION ===== -->
+		<nav>
+			<div class="logo" onclick="location.href='index.html'">
+				Ai Estate & Builders
+				<div class="logo-line"></div>
+				<span>Central Park · Lahore</span>
+			</div>
+			<div class="nav-links" id="nl">
+				<a href="index.html" class="nl">Home</a>
+				<a href="properties.html" class="nl">Properties</a>
+				<a href="about.html" class="nl">About</a>
+				<a href="contact.html" class="nl">Contact</a>
+			</div>
+			<button class="nav-cta" onclick="location.href='contact.html'">Book a Tour</button>
+			<button class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+		</nav>
+
+		<div class="toast" id="toast"><div class="tt" id="tt"></div><div class="tm2" id="tm2"></div></div>
+
+		<!-- ===== DETAIL CONTENT ===== -->
+		<div id="detailWrap">
+			<!-- Dynamically rendered -->
+		</div>
+
+		<!-- ===== FOOTER ===== -->
+		<footer>
+			<div class="fin">
+				<div><div class="fbrand">AI <span>Estate & Builders</span></div><p>Building premium homes in Central Park, Lahore. Quality construction, honest dealings, lasting value.</p><p style="margin-top:.75rem">📞 <a href="tel:03214703013" style="color:var(--copper);text-decoration:none">0321-4703013</a></p></div>
+				<div class="flinks"><h4>Navigation</h4><a href="index.html">Home</a><a href="properties.html">Properties</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+				<div class="flinks"><h4>Listings</h4><a href="properties.html?filter=5%20Marla">5 Marla Homes</a><a href="properties.html?filter=10%20Marla">10 Marla Homes</a><a href="contact.html">Book a Tour</a><a href="admin.html" style="opacity:.3;font-size:.7rem">Admin</a></div>
+			</div>
+			<div class="fbot"><p>© 2025 AI Estate & Builders. All rights reserved.</p><p>Central Park Housing Scheme, Lahore, Pakistan</p></div>
+		</footer>
+
+		<script src="script.js"></script>
+		<script>
+			// Render detail on load
+			document.addEventListener('DOMContentLoaded', function() {
+				const params = new URLSearchParams(window.location.search);
+				const id = parseInt(params.get('id'));
+				if (!id) {
+					document.getElementById('detailWrap').innerHTML = `
+					<div style="max-width:1200px;margin:0 auto;padding:4rem 2.5rem;text-align:center">
+					<div style="font-size:3rem;margin-bottom:1rem">🔍</div>
+					<h2 class="disp">Property not found</h2>
+					<p style="color:var(--tm)">Please go back and select a valid property.</p>
+					<button class="btn btn-g" style="margin-top:1.5rem" onclick="location.href='properties.html'">Browse Properties →</button>
+					</div>
+					`;
+					return;
+				}
+				renderDetail(id);
+				});
+		</script>
+	</body>
+</html>
