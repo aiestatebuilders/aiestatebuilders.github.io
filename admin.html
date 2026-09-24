@@ -126,19 +126,32 @@
 				</div>
 
 				<!-- Add Property -->
-				<div class="acard">
-					<h3 style="margin-bottom:1.4rem">Add New Property</h3>
+				<div class="acard" id="propFormCard">
+					<h3 style="margin-bottom:1.4rem" id="propFormTitle">Add New Property</h3>
 					<div class="apform">
 						<div class="fg"><label>Title</label><input id="nt" placeholder="Modern 5 Marla Home"></div>
 						<div class="fg"><label>Price (PKR)</label><input id="np" placeholder="1.2 Crore"></div>
-						<div class="fg"><label>Size</label><input id="ns" placeholder="5 Marla"><!--<select id="ns"><option value="5 Marla">5 Marla</option><option value="10 Marla">10 Marla</option><option value="Other">Other</option></select>--></div>
+						<div class="fg"><label>Size</label><select id="ns"><option value="5 Marla">5 Marla</option><option value="10 Marla">10 Marla</option><option value="Other">Other</option></select></div>
 						<div class="fg"><label>Status</label><select id="nst"><option value="For Sale">For Sale</option><option value="Sold">Sold</option></select></div>
 						<div class="fg"><label>Beds</label><input id="nb" type="number" placeholder="3" min="1"></div>
 						<div class="fg"><label>Baths</label><input id="nbth" type="number" placeholder="3" min="1"></div>
-						<div class="fg full"><label>Image URL (optional)</label><input id="ni" placeholder="https://..."></div>
+
+						<div class="fg full">
+							<label>Property Images (upload multiple)</label>
+							<input type="file" id="ni" accept="image/*" multiple onchange="handleImageUpload(event)" style="padding:8px; cursor:pointer;">
+							<div id="imgPreview" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;"></div>
+							<small style="color:var(--tm); font-size:.7rem; display:block; margin-top:5px;">
+								Images are auto-compressed to 1200px width. First image becomes the main cover. Click ★ on any thumbnail to make it the cover.
+							</small>
+						</div>
+
 						<div class="fg full"><label>Description</label><textarea id="nd" placeholder="Describe the property..."></textarea></div>
 						<div class="fg full"><label>Features (comma separated)</label><input id="nf" placeholder="Marble Flooring, Modern Kitchen, Backup Generator"></div>
-						<div class="full"><button class="btn btn-g" onclick="addProp()">Add Property →</button></div>
+
+						<div class="full" style="display:flex; gap:10px; flex-wrap:wrap;">
+							<button class="btn btn-g" id="propFormBtn" onclick="addProp()">Add Property →</button>
+							<button class="btn btn-o" id="propFormCancel" onclick="cancelEdit()" style="display:none;">Cancel Edit</button>
+						</div>
 					</div>
 				</div>
 
